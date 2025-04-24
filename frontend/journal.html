@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anonymous Journal</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MindMate</div>
+      <ul class = "nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/predictor">Predictor</a></li>
+        <li><a href="/journal">Journal</a></li>
+        <li><a href="/content">Resources</a></li>
+        <li><a href="/help">Help</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Anonymous Thoughts Journal</h1>
+      <p>Write anything. No one will see. Just let it out.</p>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <form id="journalForm">
+      <label for="entry">Your Thoughts:</label>
+      <textarea id="entry" name="entry" rows="8" required placeholder="Write here..."></textarea>
+      <button type="submit" class="btn">Save Entry</button>
+    </form>
+
+    <div id="confirmationMsg"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Student Wellness Hub • You are not alone 💚</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("journalForm");
+    const confirmation = document.getElementById("confirmationMsg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      form.reset();
+      confirmation.innerHTML = "<p style='color:green;'>Your thoughts have been saved anonymously.</p>";
+    });
+  </script>
+</body>
+</html>

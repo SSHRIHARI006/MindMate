@@ -1,0 +1,27 @@
+# Node modules
+backend/node_modules/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environment
+venv/
+env/
+
+# Environment variables
+*.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Logs and temp files
+*.log
+*.swp
+*.swo
+*.tmp

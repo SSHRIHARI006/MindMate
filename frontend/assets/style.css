@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: #f0fdfd;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #b2f5ea, #c3dafe);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #a0aec0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2b6cb0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #2c5282;
+    font-weight: 500;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    color: #2a4365;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background: #48bb78;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #38a169;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+  
+  .form-section {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .form-section label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 500;
+    color: #2a4365;
+  }
+  
+  .form-section input,
+  .form-section select,
+  .form-section textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #cbd5e0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    outline-color: #81e6d9;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .form-section textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form-section button {
+    background: #48bb78;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+  
+  .form-section button:hover {
+    background: #38a169;
+  }
+  
+  #resultBox {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+
+  
+  .feature-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e6fffa;
+    font-size: 0.9rem;
+    color: #2c7a7b;
+    margin-top: 2rem;
+  }
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #cbd5e0;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    resize: vertical;
+    outline-color: #81e6d9;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .feature-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .feature-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #222;
+  }
+  
+  .feature-card p {
+    margin: 0.5rem 0 1rem;
+    color: #444;
+    flex-grow: 1;
+  }
+  
+  .feature-card .btn {
+    margin-top: auto;
+    align-self: start;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feature-card .btn:hover {
+    background-color: #388e3c;
+  }
+  .help-section {
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .help-card {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .help-card h2 {
+    margin-bottom: 0.5rem;
+    color: #2c5282;
+  }
+  
+  .help-card p, .help-card ul {
+    color: #4a5568;
+    font-size: 0.95rem;
+  }
+  
+  .help-card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .help-hero {
+    text-align: center;
+    background: #ebf8ff;
+    padding: 2rem;
+  }
+  
+  #locationResults {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #2a4365;
+  }
+  
+  

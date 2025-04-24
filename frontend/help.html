@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help • MindMate</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MindMate</div>
+      <ul class = "nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/predictor">Predictor</a></li>
+        <li><a href="/journal">Journal</a></li>
+        <li><a href="/content">Resources</a></li>
+        <li><a href="/help">Help</a></li>
+      </ul>
+    </nav>
+    <div class="hero help-hero">
+      <h1>We're Here For You 💚</h1>
+      <p>Access mental health support and find help near you.</p>
+    </div>
+  </header>
+
+  <section class="help-section">
+    <div class="help-card">
+      <h2>Official Mental Health Helplines</h2>
+      <p>If you're struggling or need someone to talk to, here are some trusted helplines:</p>
+      <ul>
+        <li><strong>iCall (TISS):</strong> 9152987821 (Free, 24x7, India)</li>
+        <li><strong>AASRA:</strong> +91-9820466726</li>
+        <li><strong>Vandrevala Helpline:</strong> 1860 266 2345</li>
+        <li><strong>Global Help:</strong> <a href="https://findahelpline.com" target="_blank">findahelpline.com</a></li>
+      </ul>
+    </div>
+
+    <div class="help-card">
+      <h2>Find Help Near You</h2>
+      <p>Allow location access to get suggestions for nearby mental health professionals.</p>
+      <button class="btn" onclick="getLocation()">📍 Find Nearby Help</button>
+      <div id="locationResults"></div>
+    </div>
+
+    <div class="help-card">
+      <h2>FAQs</h2>
+      <p><strong>Q:</strong> Is it okay to seek help?<br>
+      <strong>A:</strong> Absolutely. Mental health is just as important as physical health. Seeking help is a brave and important step towards recovery.</p>
+
+      <p><strong>Q:</strong> Will my data be safe?<br>
+      <strong>A:</strong> Yes. We do not store or share any personal information you provide. Your privacy is our priority.</p>
+
+      <p><strong>Q:</strong> What if I don't feel ready to talk to someone?<br>
+      <strong>A:</strong> It's okay to feel unsure. You can start by journaling, practicing self-care, or reaching out to online resources to help you feel more comfortable.</p>
+
+      <p><strong>Q:</strong> How can I manage stress during exams?<br>
+      <strong>A:</strong> Try techniques like deep breathing, meditation, and taking regular breaks. Prioritize sleep and healthy meals to keep your energy levels up.</p>
+
+      <p><strong>Q:</strong> What are the first signs of depression?<br>
+      <strong>A:</strong> Common signs include persistent sadness, loss of interest in daily activities, changes in sleep or appetite, fatigue, and thoughts of hopelessness.</p>
+
+      <p><strong>Q:</strong> How can meditation help with mental health?<br>
+      <strong>A:</strong> Meditation helps to calm your mind, reduce stress, and improve emotional well-being. It promotes mindfulness and self-awareness, which can help manage anxiety and depression.</p>
+
+      <p><strong>Q:</strong> How can I help a friend who seems depressed?<br>
+      <strong>A:</strong> Be a good listener, offer emotional support, and encourage them to seek professional help. Let them know they are not alone and that it's okay to seek assistance.</p>
+
+      <p><strong>Q:</strong> How do I find a therapist near me?<br>
+      <strong>A:</strong> You can use our location service to find mental health professionals nearby or visit websites like Practo or TherapyRoute to explore options in your area.</p>
+    </div>
+
+    <div class="help-card">
+      <h2>You're Not Alone</h2>
+      <p>Millions of students face emotional struggles. Taking care of your mental health is a sign of strength.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 MindMate • Your Mental Health Companion 💙</p>
+  </footer>
+
+  <script>
+    function getLocation() {
+      const output = document.getElementById("locationResults");
+
+      if (!navigator.geolocation) {
+        output.innerHTML = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      output.innerHTML = "Finding your location...";
+
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        output.innerHTML = `
+          <p><strong>Your Location:</strong> ${lat.toFixed(3)}, ${lon.toFixed(3)}</p>
+          <p>Check <a href="https://www.google.com/maps/search/therapist/@${lat},${lon},14z" target="_blank">therapists near you on Google Maps</a>.</p>
+        `;
+      }, () => {
+        output.innerHTML = "Unable to retrieve your location.";
+      });
+    }
+  </script>
+</body>
+</html>
