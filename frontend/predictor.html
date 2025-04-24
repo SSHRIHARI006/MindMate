@@ -115,6 +115,13 @@
     const form = document.getElementById('predictForm');
     const resultBox = document.getElementById('resultBox');
 
+    function getLikelihoodLevel(confidence) {
+      if (confidence < 75) return 'Low';
+      else if (confidence < 80) return 'Moderate';
+      else if (confidence < 90) return 'High';
+      else return 'Very High';
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -142,26 +149,33 @@
         });
 
         const result = await response.json();
+        const confidence = result.confidence;
+        const level = getLikelihoodLevel(confidence);
 
-        // Determine prediction category
-        let predictionLabel = '';
+        let color = 'gray';
         let suggestion = '';
-        let confidenceText = result.confidence + '%';
 
-        if (result.prediction === 'Yes') {
-          predictionLabel = '<span style="color: red;">High Risk</span>';
-          suggestion = 'We recommend you explore the available resources and journal your feelings.';
-        } else if (result.prediction === 'No') {
-          predictionLabel = '<span style="color: green;">Low Risk</span>';
-          suggestion = 'Keep taking care of your mental health, but do explore the resources for prevention.';
-        } else {
-          predictionLabel = '<span style="color: orange;">Medium Risk</span>';
-          suggestion = 'Consider utilizing the resources and journaling to keep track of your well-being.';
+        switch (level) {
+          case 'Low':
+            color = 'green';
+            suggestion = 'Keep taking care of your mental health, and explore resources for prevention.';
+            break;
+          case 'Moderate':
+            color = 'orange';
+            suggestion = 'Consider using the mental health resources and journaling to monitor your state.';
+            break;
+          case 'High':
+            color = 'red';
+            suggestion = 'It is advisable to explore the resources and journal regularly.';
+            break;
+          case 'Very High':
+            color = 'darkred';
+            suggestion = 'You should seek support immediately and use all available resources.';
+            break;
         }
 
         resultBox.innerHTML = `
-          <h3>Prediction Result: ${predictionLabel}</h3>
-          <p>Confidence: ${confidenceText}</p>
+          <h3>Confidence Level: <span style="color: ${color};">${level}</span></h3>
           <p>${suggestion}</p>
           <div style="margin-top: 20px;">
             <strong>Explore More:</strong>

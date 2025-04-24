@@ -49,11 +49,11 @@ suicidal_map = {"No": 0, "Yes": 1}
 
 # Likelihood categories
 def get_likelihood_level(confidence):
-    if confidence <80:
+    if confidence <75:
         return "Low"
-    elif confidence < 90:
+    elif confidence < 80:
         return "Moderate"
-    elif confidence < 95:
+    elif confidence < 90:
         return "High"
     else:
         return "Very High"
